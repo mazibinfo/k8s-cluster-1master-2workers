@@ -114,9 +114,9 @@ This guide outlines the steps needed to set up a Kubernetes cluster using `kubea
     sudo apt-get update
     sudo apt-get install -y apt-transport-https ca-certificates curl gpg
 
-    curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+    curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.33/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
 
-    echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+    echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.33/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
     sudo apt-get update
     sudo apt-get install -y kubelet kubeadm kubectl
@@ -139,7 +139,7 @@ This guide outlines the steps needed to set up a Kubernetes cluster using `kubea
 
 3. **Install a Network Plugin (Calico)**:
     ```bash
-    kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.0/manifests/calico.yaml
+    kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.30.0/manifests/calico.yaml
     ```
 
 4. **Generate Join Command**:
